@@ -6,6 +6,11 @@ env/
 # Variables de entorno
 .env
 
+# Variables de entorno
+.docs
+docs/.*
+docs/
+docs/*
 # Python
 __pycache__/
 *.py[cod]

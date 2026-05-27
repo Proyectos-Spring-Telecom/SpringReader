@@ -60,6 +60,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.APP_NAME,
+    root_path=settings.APP_ROOT_PATH,
     version="1.1.0",
     description=(
         "Microservicio de OCR con PaddleOCR, parser de INE mexicana "

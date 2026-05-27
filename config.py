@@ -13,6 +13,7 @@ class Settings(BaseSettings):
 
     APP_NAME: str = "SpringReader"
     APP_PORT: int = 8001
+    APP_ROOT_PATH: str = ""
     APP_ENV: str = "development"
     LOG_LEVEL: str = "INFO"
 

@@ -91,14 +91,14 @@ class HealthResponse(BaseModel):
 class ActividadEconomica(BaseModel):
     orden: int
     descripcion: str
-    porcentaje: int
-    fechaInicio: str
+    porcentaje: int | None = None
+    fechaInicio: str | None = None
     fechaFin: str | None = None
 
 
 class RegimenFiscal(BaseModel):
     descripcion: str
-    fechaInicio: str
+    fechaInicio: str | None = None
     fechaFin: str | None = None
 
 
@@ -144,4 +144,4 @@ class ConstanciaFiscalResponse(BaseModel):
     processing_type: str
     page_count: int
     data: ConstanciaFiscalData
-    raw_text: str
+    raw_text: str | None = None

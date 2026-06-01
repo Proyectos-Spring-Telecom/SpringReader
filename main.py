@@ -321,5 +321,4 @@ async def constancia_fiscal_extract(
         processingType=processing_type.lower(),
         pageCount=page_count,
         data=ConstanciaFiscalDataWrapper(constancia=ConstanciaFiscalData(**datos)),
-        raw_text=raw_text,
     )

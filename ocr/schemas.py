@@ -149,4 +149,3 @@ class ConstanciaFiscalResponse(BaseModel):
     processingType: str
     pageCount: int
     data: ConstanciaFiscalDataWrapper
-    raw_text: str | None = None

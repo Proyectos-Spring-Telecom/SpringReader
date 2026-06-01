@@ -27,6 +27,7 @@ from ocr.schemas import (
     BatchOcrResponse,
     BatchOcrResultItem,
     ConstanciaFiscalData,
+    ConstanciaFiscalDataWrapper,
     ConstanciaFiscalResponse,
     HealthResponse,
     IneExtractData,
@@ -317,9 +318,8 @@ async def constancia_fiscal_extract(
     datos = parse_constancia_fiscal(raw_text)
 
     return ConstanciaFiscalResponse(
-        extraction_id=str(uuid.uuid4()),
-        processing_type=processing_type,
-        page_count=page_count,
-        data=ConstanciaFiscalData(**datos),
+        processingType=processing_type.lower(),
+        pageCount=page_count,
+        data=ConstanciaFiscalDataWrapper(constancia=ConstanciaFiscalData(**datos)),
         raw_text=raw_text,
     )

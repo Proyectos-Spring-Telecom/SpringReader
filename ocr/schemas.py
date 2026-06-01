@@ -139,9 +139,14 @@ class ConstanciaFiscalData(BaseModel):
     obligaciones: list[ObligacionFiscal] = []
 
 
+class ConstanciaFiscalDataWrapper(BaseModel):
+    constancia: ConstanciaFiscalData
+
+
 class ConstanciaFiscalResponse(BaseModel):
-    extraction_id: str
-    processing_type: str
-    page_count: int
-    data: ConstanciaFiscalData
+    status: str = "success"
+    message: str = "Constancia fiscal procesada correctamente"
+    processingType: str
+    pageCount: int
+    data: ConstanciaFiscalDataWrapper
     raw_text: str | None = None
